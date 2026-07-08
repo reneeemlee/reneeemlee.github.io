@@ -82,7 +82,9 @@ button:focus-visible {
   padding: 0.3rem 0.75rem;
   border-radius: var(--radius-pill);
   font-size: 0.9rem;
+  text-decoration: none;
 }
+.nav-mark:hover { color: var(--ink); background: var(--sky); }
 
 .site-nav nav ul {
   list-style: none;
@@ -191,7 +193,7 @@ button:focus-visible {
 
 .hero-tagline {
   font-size: 1.15rem;
-  max-width: 46ch;
+  max-width: 60ch;
   color: var(--ink-soft);
   margin: 0 0 2rem;
 }
@@ -415,6 +417,22 @@ button:focus-visible {
   max-width: 60ch;
 }
 
+.project-card__links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+.project-card__link:hover { color: var(--blush-text); }
+.project-card__link svg { display: block; }
 .tag-list {
   list-style: none;
   display: flex;
