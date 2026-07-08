@@ -115,6 +115,25 @@ button:focus-visible {
   background: var(--ink);
 }
 
+.nav-extra {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.nav-extra__link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav-extra__link:hover { color: var(--blush-text); }
+.nav-extra__icon {
+  display: flex;
+  color: var(--ink);
+}
+.nav-extra__icon:hover { color: var(--blush-text); }
+.nav-extra__icon svg { display: block; }
+
 /* ============================================
    HERO
    ============================================ */
@@ -287,24 +306,36 @@ button:focus-visible {
 }
 .section-body p:last-child { margin-bottom: 0; }
 
+.skills-card {
+  margin-top: 2rem;
+  padding: 1.75rem 2rem;
+  border-radius: var(--radius);
+  background: var(--blush);
+}
 .skills-heading {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 500;
   font-size: 1.15rem;
   color: var(--ink);
-  margin: 2rem 0 1rem;
+  margin: 0 0 1.25rem;
 }
 .skills {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 .skills__row {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 0.75rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid rgba(28, 28, 30, 0.1);
+}
+.skills__row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 .skills__label {
   flex: 0 0 150px;
@@ -446,6 +477,7 @@ button:focus-visible {
     padding: 0.9rem 2rem;
   }
   .nav-toggle { display: flex; }
+  .nav-extra { display: none; }
 
   .project-card__top { flex-wrap: wrap; gap: 0.5rem; }
   .hero-blob { display: none; }
