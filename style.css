@@ -417,19 +417,19 @@ button:focus-visible {
   max-width: 60ch;
 }
 
-.project-card__links {
+.project-card__footer {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 .project-card__link {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--ink);
+  color: var(--ink-faint);
   text-decoration: none;
+  flex-shrink: 0;
 }
 .project-card__link:hover { color: var(--blush-text); }
 .project-card__link svg { display: block; }
