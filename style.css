@@ -379,6 +379,10 @@ button:focus-visible {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+.project-card__top h3 {
+  margin: 0;
 }
 
 .project-card__index {
