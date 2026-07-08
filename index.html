@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renée Lee — Portfolio</title>
+<meta name="description" content="Portfolio of Renée Lee, Computer Science student at the University of Washington.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="ledger-line" aria-hidden="true"></div>
+
+<header class="site-nav">
+  <div class="nav-mark">RN</div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <p class="eyebrow">CS @ University of Washington</p>
+    <h1>Renee Lee</h1>
+    <p class="hero-tagline">I build software with the same care I bring to reading a balance sheet — currently seeking Software Engineering &amp; finance-adjacent internships.</p>
+
+    <dl class="ledger-stats">
+      <div class="ledger-stats__row">
+        <dt>School</dt>
+        <dd>University of Washington, Paul G. Allen School of CS&nbsp;&amp;&nbsp;E</dd>
+      </div>
+      <div class="ledger-stats__row">
+        <dt>Minor</dt>
+        <dd>Business Administration, Foster School of Business</dd>
+      </div>
+      <div class="ledger-stats__row">
+        <dt>Focus</dt>
+        <dd>Software Engineering &middot; CS/Finance Intersection</dd>
+      </div>
+      <div class="ledger-stats__row">
+        <dt>Based in</dt>
+        <dd>Seattle, WA</dd>
+      </div>
+    </dl>
+
+    <div class="hero-actions">
+      <a class="btn btn--primary" href="#projects">View Projects</a>
+      <a class="btn btn--ghost" href="resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-head">
+      <span class="section-code">NO. 01</span>
+      <h2>About</h2>
+    </div>
+    <div class="section-body">
+      <p>I'm a Computer Science student at the University of Washington, minoring in Business Administration through the Foster School. I'm drawn to the point where clean systems design meets financial reasoning — the same instinct that makes a database schema well-normalized is the instinct that makes a model well-structured.</p>
+      <p>On campus, I work as an undergraduate Teaching Assistant for CSE&nbsp;123, and I'm involved with UW's Com² and Women in Computing communities. Outside of class, I train for long-distance races and am part of my sorority's leadership.</p>
+      <p>I'm currently looking for summer internships in software engineering and finance-adjacent technical roles.</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-head">
+      <span class="section-code">NO. 02</span>
+      <h2>Projects</h2>
+    </div>
+
+    <div class="ledger">
+
+      <article class="ledger-entry">
+        <div class="ledger-entry__code">PROJ&nbsp;03</div>
+        <div class="ledger-entry__main">
+          <h3>Seattle Sidewalk Accessibility Analysis</h3>
+          <p>Built for DubsTech Datathon 2026 — analyzing sidewalk accessibility data across Seattle and visualizing findings for civic impact.</p>
+          <ul class="tag-list">
+            <li>JavaScript</li><li>Tableau</li><li>Data Analysis</li>
+          </ul>
+        </div>
+        <div class="ledger-entry__status ledger-entry__status--done">Completed</div>
+      </article>
+
+      <article class="ledger-entry">
+        <div class="ledger-entry__code">PROJ&nbsp;04</div>
+        <div class="ledger-entry__main">
+          <h3>Where Does It Go?</h3>
+          <p>A waste-sorting tool for UW dorms — students scan a QR code to instantly see how to correctly sort an item, backed by a searchable database.</p>
+          <ul class="tag-list">
+            <li>PostgreSQL</li><li>QR Codes</li><li>Web App</li>
+          </ul>
+        </div>
+        <div class="ledger-entry__status ledger-entry__status--progress">In Progress</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section class="section" id="resume">
+    <div class="section-head">
+      <span class="section-code">NO. 03</span>
+      <h2>Résumé</h2>
+    </div>
+    <div class="section-body resume-block">
+      <p>The full picture — coursework, experience, and skills — in one page.</p>
+      <a class="btn btn--primary" href="resume.pdf" target="_blank" rel="noopener">Download Résumé (PDF)</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-head">
+      <span class="section-code">NO. 04</span>
+      <h2>Contact</h2>
+    </div>
+    <div class="section-body">
+      <p>I'm happy to talk about internships, projects, or anything CS + finance.</p>
+      <ul class="contact-list">
+        <li><a href="mailto:rel1221@uw.edu">rel1221@uw.edu</a></li>
+        <li><a href="https://linkedin.com/in/renee-em-lee" target="_blank" rel="noopener">linkedin.com/in/renee-em-lee</a></li>
+        <li><a href="https://github.com/reneeemlee" target="_blank" rel="noopener">github.com/reneeemlee</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>Designed &amp; built by Renée Lee.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
