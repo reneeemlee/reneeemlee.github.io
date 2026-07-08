@@ -1,22 +1,25 @@
 /* ============================================
-   TOKENS
+   TOKENS — clean girl: white base, blush + sky washes, dark ink text
    ============================================ */
 :root {
-  --ink: #0F1B2E;          /* deep navy — primary background */
-  --ink-raised: #16253F;   /* slightly lighter navy — raised surfaces */
-  --paper: #F3EFE4;        /* warm paper — primary text on navy, and card bg */
-  --paper-dim: #C9C3B2;    /* muted paper — secondary text */
-  --brass: #C9A24B;        /* brass/gold accent */
-  --brass-dim: #8A7239;    /* darker brass, for borders on paper */
-  --ledger-red: #9C3B3B;   /* sparing accent for status/highlights */
-  --line: rgba(243, 239, 228, 0.14);
+  --white: #FFFFFF;
+  --blush: #FBE7EE;        /* soft pink section wash */
+  --blush-deep: #F3B8CE;   /* deeper pink — buttons, tags, accents */
+  --blush-text: #9C4A6B;   /* readable pink for small accent text */
+  --sky: #E6F1FB;          /* soft blue section wash */
+  --sky-deep: #AAD1F0;     /* deeper blue — buttons, tags, accents */
+  --sky-text: #3E6E96;     /* readable blue for small accent text */
+  --ink: #1C1C1E;          /* near-black, headings */
+  --ink-soft: #4A4A4C;     /* dark gray, body text */
+  --ink-faint: #7A7A7D;    /* lighter gray, tertiary text */
+  --line: rgba(28, 28, 30, 0.08);
 
   --font-display: "Fraunces", Georgia, serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: "JetBrains Mono", "Courier New", monospace;
+  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 
   --max-width: 880px;
-  --radius: 6px;
+  --radius: 14px;
+  --radius-pill: 999px;
 }
 
 * { box-sizing: border-box; }
@@ -29,31 +32,27 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--white);
+  color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
-a {
-  color: var(--brass);
-  text-decoration: none;
-}
-a:hover { text-decoration: underline; }
+a { color: var(--ink); text-decoration-color: var(--blush-deep); }
+a:hover { color: var(--blush-text); }
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--brass);
+  outline: 2px solid var(--sky-deep);
   outline-offset: 3px;
 }
 
-/* thin brass line pinned to top of page — the ledger's ruled edge */
-.ledger-line {
+.top-accent {
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--brass), var(--ledger-red));
+  height: 4px;
+  background: linear-gradient(90deg, var(--blush-deep), var(--sky-deep));
   z-index: 100;
 }
 
@@ -62,26 +61,27 @@ button:focus-visible {
    ============================================ */
 .site-nav {
   position: sticky;
-  top: 3px;
+  top: 4px;
   z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 2rem;
-  background: rgba(15, 27, 46, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
 
 .nav-mark {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--brass);
-  border: 1px solid var(--brass-dim);
-  padding: 0.25rem 0.55rem;
-  border-radius: var(--radius);
-  font-size: 0.85rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  background: var(--blush);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
 }
 
 .site-nav nav ul {
@@ -93,11 +93,12 @@ button:focus-visible {
 }
 
 .site-nav nav a {
-  color: var(--paper);
+  color: var(--ink);
   font-size: 0.95rem;
   font-weight: 500;
+  text-decoration: none;
 }
-.site-nav nav a:hover { color: var(--brass); text-decoration: none; }
+.site-nav nav a:hover { color: var(--blush-text); }
 
 .nav-toggle {
   display: none;
@@ -111,67 +112,89 @@ button:focus-visible {
 .nav-toggle span {
   width: 22px;
   height: 2px;
-  background: var(--paper);
+  background: var(--ink);
 }
 
 /* ============================================
    HERO
    ============================================ */
 .hero {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0 4rem;
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.55;
+  z-index: 0;
+}
+.hero-blob--pink {
+  width: 340px; height: 340px;
+  background: var(--blush-deep);
+  top: -120px; right: -60px;
+}
+.hero-blob--blue {
+  width: 280px; height: 280px;
+  background: var(--sky-deep);
+  top: 140px; left: -100px;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 5rem 2rem 4rem;
+  padding: 0 2rem;
 }
 
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.8rem;
-  letter-spacing: 0.06em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--brass);
+  color: var(--blush-text);
   margin: 0 0 1rem;
 }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-style: italic;
+  font-weight: 500;
   font-size: clamp(2.75rem, 6vw, 4.5rem);
-  line-height: 1.02;
+  line-height: 1.05;
   margin: 0 0 1.25rem;
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .hero-tagline {
   font-size: 1.15rem;
   max-width: 46ch;
-  color: var(--paper-dim);
-  margin: 0 0 2.5rem;
+  color: var(--ink-soft);
+  margin: 0 0 2rem;
 }
 
-.ledger-stats {
+.quick-facts {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
   margin: 0 0 2.5rem;
-  border-top: 1px solid var(--line);
+  padding: 0;
 }
-.ledger-stats__row {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 1rem;
-  padding: 0.7rem 0;
-  border-bottom: 1px solid var(--line);
+
+.pill {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  color: var(--ink);
 }
-.ledger-stats__row dt {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: var(--brass);
-  margin: 0;
-}
-.ledger-stats__row dd {
-  margin: 0;
-  font-size: 0.98rem;
-  color: var(--paper);
-}
+.pill--pink { background: var(--blush); }
+.pill--blue { background: var(--sky); }
 
 .hero-actions {
   display: flex;
@@ -184,101 +207,120 @@ button:focus-visible {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius);
+  padding: 0.8rem 1.75rem;
+  border-radius: var(--radius-pill);
   border: 1px solid transparent;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
 }
-.btn:hover { text-decoration: none; }
+.btn:hover { text-decoration: none; transform: translateY(-1px); }
 
 .btn--primary {
-  background: var(--brass);
+  background: var(--blush-deep);
   color: var(--ink);
 }
-.btn--primary:hover { background: #ddb862; }
+.btn--primary:hover { background: var(--sky-deep); }
 
 .btn--ghost {
   background: transparent;
-  color: var(--paper);
-  border-color: var(--paper-dim);
+  color: var(--ink);
+  border-color: var(--ink-faint);
 }
-.btn--ghost:hover { border-color: var(--brass); color: var(--brass); }
+.btn--ghost:hover { border-color: var(--blush-text); color: var(--blush-text); }
 
 /* ============================================
-   SECTIONS (general)
+   SECTIONS (general) — full-bleed wash + centered inner
    ============================================ */
 .section {
+  width: 100%;
+  border-top: 1px solid var(--line);
+}
+.section--pink { background: var(--blush); }
+.section--blue { background: var(--sky); }
+
+.section-inner {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 4rem 2rem;
-  border-top: 1px solid var(--line);
 }
 
 .section-head {
   display: flex;
-  align-items: baseline;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.35rem;
   margin-bottom: 2rem;
 }
 
-.section-code {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--brass);
-  letter-spacing: 0.05em;
+.section-index {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--blush-text);
 }
 
 .section h2 {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 2rem;
   margin: 0;
-  color: var(--paper);
+  color: var(--ink);
 }
 
 .section-body p {
-  color: var(--paper-dim);
+  color: var(--ink-soft);
   max-width: 65ch;
   margin: 0 0 1rem;
 }
 .section-body p:last-child { margin-bottom: 0; }
 
 /* ============================================
-   PROJECTS — LEDGER ENTRIES (signature element)
+   PROJECTS — soft cards on wash background (signature element)
    ============================================ */
-.ledger {
-  display: flex;
-  flex-direction: column;
-}
-
-.ledger-entry {
+.project-list {
   display: grid;
-  grid-template-columns: 90px 1fr 120px;
   gap: 1.5rem;
-  align-items: start;
-  padding: 1.75rem 0;
-  border-bottom: 1px solid var(--line);
-}
-.ledger-entry:first-child { border-top: 1px solid var(--line); }
-
-.ledger-entry__code {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--brass);
-  opacity: 0.75;
-  padding-top: 0.2rem;
 }
 
-.ledger-entry__main h3 {
+.project-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  box-shadow: 0 8px 24px rgba(28, 28, 30, 0.06);
+}
+
+.project-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.project-card__index {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.3rem;
-  margin: 0 0 0.5rem;
-  color: var(--paper);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--ink-faint);
 }
-.ledger-entry__main p {
-  color: var(--paper-dim);
-  margin: 0 0 0.9rem;
+
+.project-card__status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+.project-card__status--done { background: var(--sky); color: var(--sky-text); }
+.project-card__status--progress { background: var(--blush); color: var(--blush-text); }
+
+.project-card h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.35rem;
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+}
+.project-card p {
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
   max-width: 60ch;
 }
 
@@ -290,26 +332,15 @@ button:focus-visible {
   margin: 0;
   padding: 0;
 }
-.tag-list li {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.02em;
-  color: var(--paper);
-  background: var(--ink-raised);
-  border: 1px solid var(--line);
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
-}
-
-.ledger-entry__status {
-  font-family: var(--font-mono);
+.tag {
   font-size: 0.75rem;
-  text-align: right;
-  padding-top: 0.25rem;
-  white-space: nowrap;
+  font-weight: 500;
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-pill);
+  color: var(--ink);
 }
-.ledger-entry__status--done { color: var(--paper-dim); }
-.ledger-entry__status--progress { color: var(--ledger-red); }
+.tag--pink { background: var(--blush); }
+.tag--blue { background: var(--sky); }
 
 /* ============================================
    RESUME / CONTACT
@@ -323,9 +354,9 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
+.contact-list a { text-decoration: underline; text-decoration-color: var(--blush-deep); }
 
 /* ============================================
    FOOTER
@@ -335,7 +366,7 @@ button:focus-visible {
   margin: 0 auto;
   padding: 2.5rem 2rem 4rem;
   border-top: 1px solid var(--line);
-  color: var(--paper-dim);
+  color: var(--ink-faint);
   font-size: 0.85rem;
 }
 .site-footer p { margin: 0; }
@@ -349,7 +380,7 @@ button:focus-visible {
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--ink);
+    background: var(--white);
     border-bottom: 1px solid var(--line);
     display: none;
   }
@@ -365,10 +396,6 @@ button:focus-visible {
   }
   .nav-toggle { display: flex; }
 
-  .ledger-entry {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
-  }
-  .ledger-entry__status { text-align: left; }
-  .ledger-stats__row { grid-template-columns: 100px 1fr; }
+  .project-card__top { flex-wrap: wrap; gap: 0.5rem; }
+  .hero-blob { display: none; }
 }
