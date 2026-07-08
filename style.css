@@ -310,8 +310,8 @@ button:focus-visible {
   margin-top: 2rem;
   padding: 1.75rem 2rem;
   border-radius: var(--radius);
-  background: var(--blush);
-  border: 1px solid var(--blush-deep);
+  background: var(--white);
+  border: 1.5px solid var(--blush-deep);
   box-shadow: 0 8px 24px rgba(28, 28, 30, 0.06);
 }
 .skills-heading {
@@ -329,9 +329,8 @@ button:focus-visible {
 }
 .skills__row {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.75rem;
+  flex-direction: column;
+  gap: 0.6rem;
   padding-bottom: 1.4rem;
   border-bottom: 1px solid rgba(28, 28, 30, 0.1);
 }
@@ -340,7 +339,6 @@ button:focus-visible {
   border-bottom: none;
 }
 .skills__label {
-  flex: 0 0 150px;
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -489,5 +487,4 @@ button:focus-visible {
   .project-card__top { flex-wrap: wrap; gap: 0.5rem; }
   .hero-blob { display: none; }
   .quick-facts__row { flex-direction: column; gap: 0.25rem; }
-  .skills__row { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }
