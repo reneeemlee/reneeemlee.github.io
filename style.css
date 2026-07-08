@@ -182,23 +182,23 @@ button:focus-visible {
   border-top: 1px solid var(--line);
 }
 .quick-facts__row {
-  display: grid;
-  grid-template-columns: 150px 1fr;
+  display: flex;
+  align-items: baseline;
   gap: 1rem;
   padding: 0.7rem 0;
   border-bottom: 1px solid var(--line);
 }
-.quick-facts__row dt {
+.quick-facts__label {
+  flex: 0 0 150px;
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--blush-text);
-  margin: 0;
 }
-.quick-facts__row dd {
-  margin: 0;
+.quick-facts__value {
+  flex: 1;
   font-size: 0.98rem;
   color: var(--ink);
 }
@@ -405,5 +405,5 @@ button:focus-visible {
 
   .project-card__top { flex-wrap: wrap; gap: 0.5rem; }
   .hero-blob { display: none; }
-  .quick-facts__row { grid-template-columns: 100px 1fr; }
+  .quick-facts__row { flex-direction: column; gap: 0.25rem; }
 }
