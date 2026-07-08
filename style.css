@@ -118,7 +118,7 @@ button:focus-visible {
 .nav-extra {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 2rem;
 }
 .nav-extra__link {
   font-size: 0.95rem;
@@ -311,6 +311,8 @@ button:focus-visible {
   padding: 1.75rem 2rem;
   border-radius: var(--radius);
   background: var(--blush);
+  border: 1px solid var(--blush-deep);
+  box-shadow: 0 8px 24px rgba(28, 28, 30, 0.06);
 }
 .skills-heading {
   font-family: var(--font-display);
