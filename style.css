@@ -216,11 +216,16 @@ button:focus-visible {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.95rem;
+  line-height: 1;
   padding: 0.8rem 1.75rem;
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
   text-decoration: none;
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+.btn svg {
+  display: block;
+  flex-shrink: 0;
 }
 .btn:hover { text-decoration: none; transform: translateY(-1px); }
 
