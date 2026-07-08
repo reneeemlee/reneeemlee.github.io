@@ -7,12 +7,12 @@
 <meta name="description" content="Portfolio of Renée Lee, Computer Science student at the University of Washington.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="ledger-line" aria-hidden="true"></div>
+<div class="top-accent" aria-hidden="true"></div>
 
 <header class="site-nav">
   <div class="nav-mark">Renée Lee</div>
@@ -33,114 +33,111 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
-    <p class="eyebrow">CS @ University of Washington</p>
-    <h1>Renée Lee</h1>
-    <p class="hero-tagline">Currently seeking Software Engineering &amp; finance-adjacent internships.</p>
+    <div class="hero-blob hero-blob--pink" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob--blue" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow">CS @ University of Washington</p>
+      <h1>Renée Lee</h1>
+      <p class="hero-tagline">Currently seeking Software Engineering &amp; finance-adjacent internships.</p>
 
-    <dl class="ledger-stats">
-      <div class="ledger-stats__row">
-        <dt>School</dt>
-        <dd>University of Washington</dd>
-      </div>
-      <div class="ledger-stats__row">
-        <dt>Major</dt>
-        <dd>Computer Science, Paul G. Allen School of Computer Science&nbsp;&amp;&nbsp;Engineering</dd>
-      </div>
-      <div class="ledger-stats__row">
-        <dt>Minor</dt>
-        <dd>Business Administration, Foster School of Business</dd>
-      </div>
-      <div class="ledger-stats__row">
-        <dt>Focus</dt>
-        <dd>Software Engineering &middot; CS/Finance Intersection</dd>
-      </div>
-      <div class="ledger-stats__row">
-        <dt>Based in</dt>
-        <dd>Seattle, WA</dd>
-      </div>
-    </dl>
+      <ul class="quick-facts">
+        <li class="pill pill--pink">University of Washington, Allen School of CS&nbsp;&amp;&nbsp;E</li>
+        <li class="pill pill--blue">Computer Science</li>
+        <li class="pill pill--pink">Business Administration Minor, Foster School</li>
+        <li class="pill pill--blue">Software Engineering &middot; CS/Finance Intersection</li>
+        <li class="pill pill--pink">Seattle, WA</li>
+      </ul>
 
-    <div class="hero-actions">
-      <a class="btn btn--primary" href="#projects">View Projects</a>
-      <a class="btn btn--ghost" href="resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="#projects">View Projects</a>
+        <a class="btn btn--ghost" href="resume.pdf" target="_blank" rel="noopener">Download Résumé</a>
+      </div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section class="section" id="about">
-    <div class="section-head">
-      <span class="section-code">NO. 01</span>
-      <h2>About</h2>
-    </div>
-    <div class="section-body">
-      <p>I'm a Computer Science student at the University of Washington, minoring in Business Administration through the Foster School. </p>
-      <p>On campus, I work as an undergraduate Teaching Assistant for CSE&nbsp;123. Outside of class, I [input].</p>
-      <p>I'm currently looking for summer internships in software engineering and [technical roles].</p>
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-index">01 — About</span>
+        <h2>About</h2>
+      </div>
+      <div class="section-body">
+        <p>I'm a Computer Science student at the University of Washington, minoring in Business Administration through the Foster School.</p>
+        <p>On campus, I work as an undergraduate Teaching Assistant for CSE&nbsp;123. Outside of class, I [input].</p>
+        <p>I'm currently looking for summer internships in software engineering and [technical roles].</p>
+      </div>
     </div>
   </section>
 
   <!-- PROJECTS -->
-  <section class="section" id="projects">
-    <div class="section-head">
-      <span class="section-code">NO. 02</span>
-      <h2>Projects</h2>
-    </div>
+  <section class="section section--pink" id="projects">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-index">02 — Projects</span>
+        <h2>Projects</h2>
+      </div>
 
-    <div class="ledger">
+      <div class="project-list">
 
-      <article class="ledger-entry">
-        <div class="ledger-entry__code">PROJ&nbsp;01</div>
-        <div class="ledger-entry__main">
+        <article class="project-card">
+          <div class="project-card__top">
+            <span class="project-card__index">Project 01</span>
+            <span class="project-card__status project-card__status--done">Completed</span>
+          </div>
           <h3>Seattle Sidewalk Accessibility Analysis</h3>
           <p>Built for DubsTech Datathon 2026 — analyzing sidewalk accessibility data across Seattle and visualizing findings for civic impact.</p>
           <ul class="tag-list">
-            <li>JavaScript</li><li>Tableau</li><li>Data Analysis</li>
+            <li class="tag tag--blue">JavaScript</li><li class="tag tag--pink">Tableau</li><li class="tag tag--blue">Data Analysis</li>
           </ul>
-        </div>
-        <div class="ledger-entry__status ledger-entry__status--done">Completed</div>
-      </article>
+        </article>
 
-      <article class="ledger-entry">
-        <div class="ledger-entry__code">PROJ&nbsp;02</div>
-        <div class="ledger-entry__main">
+        <article class="project-card">
+          <div class="project-card__top">
+            <span class="project-card__index">Project 02</span>
+            <span class="project-card__status project-card__status--progress">In Progress</span>
+          </div>
           <h3>Where Does It Go?</h3>
           <p>A waste-sorting tool for UW dorms — students scan a QR code to instantly see how to correctly sort an item, backed by a searchable database.</p>
           <ul class="tag-list">
-            <li>PostgreSQL</li><li>QR Codes</li><li>Web App</li>
+            <li class="tag tag--pink">PostgreSQL</li><li class="tag tag--blue">QR Codes</li><li class="tag tag--pink">Web App</li>
           </ul>
-        </div>
-        <div class="ledger-entry__status ledger-entry__status--progress">In Progress</div>
-      </article>
+        </article>
 
+      </div>
     </div>
   </section>
 
   <!-- RESUME -->
-  <section class="section" id="resume">
-    <div class="section-head">
-      <span class="section-code">NO. 03</span>
-      <h2>Résumé</h2>
-    </div>
-    <div class="section-body resume-block">
-      <p>[TODO: Input one liner/details]</p>
-      <a class="btn btn--primary" href="resume.pdf" target="_blank" rel="noopener">Download Résumé (PDF)</a>
+  <section class="section section--blue" id="resume">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-index">03 — Résumé</span>
+        <h2>Résumé</h2>
+      </div>
+      <div class="section-body resume-block">
+        <p>The full picture — coursework, experience, and skills — in one page.</p>
+        <a class="btn btn--primary" href="resume.pdf" target="_blank" rel="noopener">Download Résumé (PDF)</a>
+      </div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="section" id="contact">
-    <div class="section-head">
-      <span class="section-code">NO. 04</span>
-      <h2>Contact</h2>
-    </div>
-    <div class="section-body">
-      <p>I'm happy to talk about internships, projects, or anything [TODO: CS + finance].</p>
-      <ul class="contact-list">
-        <li><a href="mailto:rel1221@uw.edu">rel1221@uw.edu</a></li>
-        <li><a href="mailto:reneeemilylee@gmail.com">reneeemilylee@gmail.com</a></li>
-        <li><a href="https://linkedin.com/in/renee-em-lee" target="_blank" rel="noopener">linkedin.com/in/renee-em-lee</a></li>
-        <li><a href="https://github.com/reneeemlee" target="_blank" rel="noopener">github.com/reneeemlee</a></li>
-      </ul>
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-index">04 — Contact</span>
+        <h2>Contact</h2>
+      </div>
+      <div class="section-body">
+        <p>I'm happy to talk about internships, projects, or anything at the intersection of CS and finance.</p>
+        <ul class="contact-list">
+          <li><a href="mailto:rel1221@uw.edu">rel1221@uw.edu</a></li>
+          <li><a href="mailto:reneeemilylee@gmail.com">reneeemilylee@gmail.com</a></li>
+          <li><a href="https://linkedin.com/in/renee-em-lee" target="_blank" rel="noopener">linkedin.com/in/renee-em-lee</a></li>
+          <li><a href="https://github.com/reneeemlee" target="_blank" rel="noopener">github.com/reneeemlee</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
